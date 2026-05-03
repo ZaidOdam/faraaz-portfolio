@@ -27,7 +27,7 @@ function About() {
       <div className="about-grid">
         <div className="about-text reveal">
           <p>
-            I'm Faraaz Salim Odam, an aspiring Communication Designer with a deep rooted love for viual storytelling — one that began long before I learned the word "design."
+            I'm Faraaz Salim Odam, an aspiring Communication Designer with a deep rooted love for visual storytelling — one that began long before I learned the word "design."
           </p>
           <p>
             My journey started with a sketchbook and a stubborn belief that every idea deserves a beautiful form. From hand-drawn comics to brand identities for real businesses, I've always been drawn to the space where art and purpose intersect. I find meaning in the details — the curve of a letterform, the weight of a tagline, the colour that makes someone feel something without knowing why.
