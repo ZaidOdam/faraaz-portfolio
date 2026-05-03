@@ -44,6 +44,7 @@ function App() {
       <About />
       <div className="section-divider" />
       <Skills />
+      <div className="section-divider" />
       <Achievement />
       <div className="section-divider" />
       <Projects />
