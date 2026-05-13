@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
 import Achievement from './components/Achievement'
+import Illustrations from './components/Illustrations'
 import Projects from './components/Projects'
 import Education from './components/Education'
 import Footer from './components/Footer'
@@ -46,6 +47,8 @@ function App() {
       <Skills />
       <div className="section-divider" />
       <Achievement />
+      <div className="section-divider" />
+      <Illustrations />
       <div className="section-divider" />
       <Projects />
       <div className="section-divider" />
