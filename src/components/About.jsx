@@ -38,7 +38,7 @@ function About() {
         </div>
         <div className="about-sidebar reveal">
           {infoBlocks.map((block) => (
-            <div className="info-block" key={block.title}>
+            <div className="info-block stagger-item" key={block.title}>
               <h4>{block.title}</h4>
               <p>
                 {block.content.split('\n').map((line, i) => (

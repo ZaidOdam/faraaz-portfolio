@@ -32,9 +32,9 @@ function Skills() {
       <h2 className="section-title reveal">
         What I Bring<br />to the Table
       </h2>
-      <div className="skills-grid">
+      <div className="skills-grid reveal">
         {skills.map((skill) => (
-          <div className="skill-card reveal" key={skill.title}>
+          <div className="skill-card stagger-item" key={skill.title}>
             <div className="skill-icon">{skill.icon}</div>
             <h3>{skill.title}</h3>
             <p>{skill.desc}</p>

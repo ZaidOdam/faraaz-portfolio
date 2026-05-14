@@ -111,10 +111,10 @@ function Achievement() {
           Winning Artworks
           <span className="artwork-gallery-line" />
         </h3>
-        <div className="artwork-grid">
+        <div className="artwork-grid reveal">
           {artworks.map((art, i) => (
             <div
-              className={`artwork-card${activeArt === i ? ' active' : ''}`}
+              className={`artwork-card stagger-item${activeArt === i ? ' active' : ''}`}
               key={i}
               onMouseEnter={() => setActiveArt(i)}
               onClick={() => openLightbox(art.src)}

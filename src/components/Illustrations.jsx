@@ -88,7 +88,7 @@ function Illustrations() {
       <div className="illustrations-grid reveal">
         {illustrations.map((art, i) => (
           <div
-            className={`illust-card illust-${art.span}`}
+            className={`illust-card illust-${art.span} stagger-item`}
             key={i}
             onClick={() => openLightbox(art.src, i)}
           >

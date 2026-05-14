@@ -11,8 +11,14 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
-  const [revealedElements, setRevealedElements] = useState(new Set())
+  const [loaded, setLoaded] = useState(false)
   const observerRef = useRef(null)
+
+  // Page loader: show for 800ms then fade out
+  useEffect(() => {
+    const timer = setTimeout(() => setLoaded(true), 800)
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleReveal = useCallback((entries) => {
     entries.forEach((entry) => {
@@ -39,6 +45,23 @@ function App() {
 
   return (
     <>
+      {/* Page load transition */}
+      <div className={`page-loader${loaded ? ' loaded' : ''}`}>
+        <div className="page-loader-content">
+          <div className="page-loader-logo">
+            F<em>O</em>
+          </div>
+          <div className="page-loader-bar" />
+        </div>
+      </div>
+
+      {/* Ambient floating background */}
+      <div className="ambient-bg" aria-hidden="true">
+        <div className="ambient-orb ambient-orb-1" />
+        <div className="ambient-orb ambient-orb-2" />
+        <div className="ambient-orb ambient-orb-3" />
+      </div>
+
       <Navbar />
       <Hero />
       <div className="section-divider" />

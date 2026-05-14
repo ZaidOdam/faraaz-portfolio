@@ -1,10 +1,41 @@
+import { useState, useEffect } from 'react'
 import foLogo from '../assets/FO_logo.PNG'
 
+const TAGLINE = 'Communication Designer · Kolhapur, India'
+
 function Hero() {
+  const [typedText, setTypedText] = useState('')
+  const [cursorVisible, setCursorVisible] = useState(true)
+
+  useEffect(() => {
+    let typingInterval
+    // Delay typing to sync with page loader fade-out
+    const startDelay = setTimeout(() => {
+      let i = 0
+      typingInterval = setInterval(() => {
+        if (i < TAGLINE.length) {
+          setTypedText(TAGLINE.slice(0, i + 1))
+          i++
+        } else {
+          clearInterval(typingInterval)
+          setTimeout(() => setCursorVisible(false), 2500)
+        }
+      }, 45)
+    }, 800)
+
+    return () => {
+      clearTimeout(startDelay)
+      if (typingInterval) clearInterval(typingInterval)
+    }
+  }, [])
+
   return (
     <section className="hero" id="home">
       <div className="hero-left">
-        <p className="hero-tag">Communication Designer · Kolhapur, India</p>
+        <p className="hero-tag">
+          {typedText}
+          {cursorVisible && <span className="typing-cursor" />}
+        </p>
         <h1 className="hero-name">
           Faraaz<br />
           <em>Odam</em>
